@@ -1,23 +1,21 @@
 "use strict";
-// How to declare datatype in typescript
-let surname = "smith";
-let secondname = "smithy";
-let thirdname = "smithyie"; // on hover we can get the datatype
-//Union dataypes
-let Unionsurname; // it can be both number and string
-Unionsurname = 2343;
-Unionsurname = "string";
-///function
-const func = (n, m) => {
-    console.log(n, m);
-    return n * m;
+// With arrr
+const arr = [1, 2, 3];
+const arr2 = ["sad", "mad", 2, 1];
+const arr3 = ["hello", 12, "world"];
+//implementation
+const gigi = {
+    height: 160,
+    weight: 58.5,
+    scholar: true,
+    man: "Gigih",
+    func: (n, m) => {
+        console.log(n * m);
+    },
 };
-const func2 = (n, m) => {
-    console.log(n, m);
-    return String(n * m);
-}; // func2  is returning a string instead of number by automatically detecting the return no need to write explicitly
-let aliaName = "John";
-const alia = (n, m) => {
-    console.log(n, m);
-    return n + m;
-}; // make funciton simple and more freindly to read.
+const gigi2 = {
+    ...gigi,
+    gender: false,
+};
+console.log(gigi2);
+console.log(gigi);
