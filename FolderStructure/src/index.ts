@@ -21,3 +21,18 @@ const func2 = (n: number, m: number) => {
   console.log(n, m);
   return String(n * m);
 }; // func2  is returning a string instead of number by automatically detecting the return no need to write explicitly
+
+//Type aliases
+
+type aliasSurname = string | Number; // add more datatypes
+
+let aliaName: aliasSurname = "John";
+
+//In funciton
+
+type aliaFunc = (n: string, m: string) => string;
+
+const alia: aliaFunc = (n, m) => {
+  console.log(n, m);
+  return n + m;
+}; // make funciton simple and more freindly to read.
