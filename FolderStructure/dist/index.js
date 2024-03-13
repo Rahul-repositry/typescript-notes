@@ -1,21 +1,21 @@
 "use strict";
-// With arrr
-const arr = [1, 2, 3];
-const arr2 = ["sad", "mad", 2, 1];
-const arr3 = ["hello", 12, "world"];
-//implementation
-const gigi = {
-    height: 160,
-    weight: 58.5,
-    scholar: true,
-    man: "Gigih",
-    func: (n, m) => {
-        console.log(n * m);
-    },
+function log(n) {
+    console.log("w234r");
+    return n;
+}
+const getData = (product) => {
+    console.log(product);
 };
-const gigi2 = {
-    ...gigi,
-    gender: false,
+const productOne = {
+    name: "iphone",
+    stock: 10,
+    price: 599,
 };
-console.log(gigi2);
-console.log(gigi);
+getData(productOne);
+//Never Type
+const errorHandler = () => {
+    // throw new Error();
+    return new Error();
+}; // it throws a never type when nothing is return while throwing error but if  we use return then type will be error
+//when never datype is used ?
+// The never type in TypeScript represents the type of values that never occur. For example, a function that always throws an error and never reaches a return statement can be given a return type of never.
