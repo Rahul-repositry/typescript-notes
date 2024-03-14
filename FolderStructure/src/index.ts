@@ -1,43 +1,51 @@
-type funcType = (...m: number[]) => number[]; // spread operator function
+//classes
 
-function log(n: number): number {
-  console.log("w234r");
-  return n;
+class Player {
+  readonly id: string;
+  private height: number; //cannot access anywhere other than this class
+  protected weight: number; // can access in extends
+  age: number; // default public
+
+  constructor(height: number, weight: number, age: number) {
+    this.height = height;
+    this.weight = weight;
+    this.age = age;
+    this.id = String(Math.random());
+  }
 }
 
-//funciton with object
-interface Product {
-  name: string;
-  stock: number;
-  price: number;
-  photo?: string;
+class Player2 extends Player {
+  special: boolean;
+  constructor(height: number, weight: number, age: number, special: boolean) {
+    super(height, weight, age);
+    this.special = special;
+  }
 }
 
-type GetDataType = (product: Product) => void;
+const abhi = new Player(200, 75, 34);
+const abhi2 = new Player2(200, 75, 34, true);
+console.log(abhi2);
+console.log(abhi);
 
-const getData: GetDataType = (product) => {
-  console.log(product);
-};
+//Now classes with interface and implemnts
 
-const productOne: {
+interface ProductType {
   name: string;
-  stock: number;
   price: number;
-  photo?: string;
-} = {
-  name: "iphone",
-  stock: 10,
-  price: 599,
-};
+  stock: number;
+  id: string;
+  offer?: boolean;
+}
 
-getData(productOne);
+class Product implements ProductType {
+  public name: string;
+  public price: number;
+  public stock: number;
+  public id: string = String(Math.random() * 1000);
 
-//Never Type
-
-const errorHandler = () => {
-  // throw new Error();
-  return new Error();
-}; // it throws a never type when nothing is return while throwing error but if  we use return then type will be error
-
-//when never datype is used ?
-// The never type in TypeScript represents the type of values that never occur. For example, a function that always throws an error and never reaches a return statement can be given a return type of never.
+  constructor(name: string, price: number, stock: number) {
+    this.name = name;
+    this.price = price;
+    this.stock = stock;
+  }
+}
